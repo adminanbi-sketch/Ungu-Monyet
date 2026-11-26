@@ -1,0 +1,33 @@
+# Konfigurasi Netlify — tidak perlu diubah.
+# JS/CSS selalu dicek ulang (perubahan videos.js & promo-config.js langsung tampil),
+# gambar & video boleh di-cache lama agar website cepat.
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/video/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/admin-video*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
